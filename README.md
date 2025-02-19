@@ -1,5 +1,5 @@
 # android-skit-example
-This sample project utilizes the Flyer Kit API and SFML SKit library to render storefronts.  Please review the [wiki](https://github.com/wishabi/android-skit-example/wiki) for more information.
+This sample project utilizes the Flyer Kit API and SFML SKit library to render storefronts.  Please review the [wiki](https://github.com/wishabi/android-skit-example-public/wiki) for more information.
 
 ## Getting started
 
