@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <data>
+    <variable name="title" type="String"/>
+    <variable name="imageUrl" type="String"/>
+    <variable name="imageLoader" type="com.android.volley.toolbox.ImageLoader"/>
+  </data>
+
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+    <com.android.volley.toolbox.NetworkImageView
+        android:importantForAccessibility="no"
+        android:scaleType="fitCenter"
+        android:layout_width="100dp"
+        app:imageUrl="@{imageUrl}"
+        app:imageLoader="@{imageLoader}"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:text="@{title}"
+        android:padding="20dp"
+        android:layout_gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+  </LinearLayout>
+
+</layout>

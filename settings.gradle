@@ -1,0 +1,31 @@
+pluginManagement {
+    repositories {
+        google {
+            content {
+                includeGroupByRegex("com\\.android.*")
+                includeGroupByRegex("com\\.google.*")
+                includeGroupByRegex("androidx.*")
+            }
+        }
+        mavenCentral()
+        gradlePluginPortal()
+
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            url "https://flipplib.jfrog.io/flipplib/android-skit-local"
+            credentials {
+                username = "{{ FLIPP_PROVIDED_JFROG_USERNAME }}"
+                password = "{{ FLIPP_PROVIDED_JFROG_PASSWORD }}"
+            }
+        }
+    }
+}
+
+rootProject.name = "Android Skit Example"
+include ':example'

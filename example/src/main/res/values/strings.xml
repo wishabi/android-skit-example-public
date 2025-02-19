@@ -1,0 +1,4 @@
+<resources>
+  <string name="app_name">SkitSampleApp</string>
+  <string name="title_activity_publication_listing">PublicationListing</string>
+</resources>

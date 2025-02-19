@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF"
+    android:clickable="true"
+    android:focusable="true">
+
+  <android.view.WayfinderView
+      android:id="@+id/storefront_wrapper"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="#333"
+      app:wayfinder_scrubber_icon="@drawable/custom_scrubber"
+      app:wayfinder_background="#7FFF0000"
+      app:wayfinder_category_layout="@layout/custom_category_layout">
+
+  </android.view.WayfinderView>
+</FrameLayout>

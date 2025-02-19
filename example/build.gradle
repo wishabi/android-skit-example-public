@@ -1,0 +1,67 @@
+plugins {
+  alias(libs.plugins.android.application)
+  alias(libs.plugins.kotlin.android)
+  id 'kotlin-kapt'
+}
+
+android {
+  namespace 'com.flipp.example.app'
+  compileSdk 34
+
+  defaultConfig {
+    applicationId "com.flipp.sample"
+    minSdk 24
+    targetSdk 34
+    versionCode 1
+    versionName "1.0"
+
+    testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+  }
+
+  buildFeatures {
+    dataBinding true
+    buildConfig true
+  }
+
+  buildTypes {
+    debug {
+      // This is your api token. For this example we have provided
+      buildConfigField("String", "FLYER_KIT_API_TOKEN", "{{ FLIPP_PROVIDED_FLYER_KIT_API_TOKEN }}")
+    }
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+    }
+  }
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+  kotlinOptions {
+    jvmTarget = '1.8'
+  }
+}
+
+configurations.configureEach {
+  // check for updates every build
+  resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
+
+dependencies {
+  implementation libs.appcompat
+  implementation libs.exifinterface
+
+  // Needed for image loading. You can replace with your own dependency but you need to wrap it to
+  // conform to the com.flipp.sfml.helpers.ImageLoader.Loader interface
+  implementation libs.picasso
+  implementation libs.material
+  implementation libs.volley
+
+  // This is not needed by your app. it is included for debug purposes only
+  implementation libs.stetho
+  implementation libs.constraintlayout
+
+  // If downloading SFML & InjectableHelper using Maven
+  implementation libs.sfml
+  implementation libs.injectablehelper
+}

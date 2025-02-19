@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center_horizontal">
+
+  <ImageView
+      android:layout_width="250dp"
+      android:layout_height="250dp"
+      android:src="@drawable/user"
+      android:id="@+id/imageView"/>
+
+  <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:text="Card #"
+        android:textStyle="bold"
+        android:textSize="14sp"/>
+    <TextView
+        android:id="@+id/card_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"/>
+  </LinearLayout>
+
+  <Button
+      android:id="@+id/get_coupons"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@drawable/clip_button"
+      android:layout_margin="12dp"
+      android:text="Get Clipped Coupons"
+      android:textColor="#FFFFFF"/>
+
+  <ListView
+      android:id="@+id/coupon_list"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content" />
+
+</LinearLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="imageUrl" type="String"/>
+        <variable name="imageLoader" type="com.android.volley.toolbox.ImageLoader"/>
+        <variable name="name" type="String"/>
+        <variable name="saleStory" type="String"/>
+        <variable name="description" type="String"/>
+    </data>
+    <ScrollView android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+            <com.android.volley.toolbox.NetworkImageView
+                android:id="@+id/coupon_image"
+                android:importantForAccessibility="no"
+                android:scaleType="fitCenter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:imageUrl="@{imageUrl}"
+                app:imageLoader="@{imageLoader}"
+                android:adjustViewBounds="true"
+                android:maxHeight="300dp" />
+            <TextView
+                android:id="@+id/item_name"
+                android:text="@{name}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+            <TextView
+                android:id="@+id/sale_storyView"
+                android:text="@{saleStory}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+            <TextView
+                android:id="@+id/descriptionView"
+                android:text="@{description}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </ScrollView>
+</layout>
